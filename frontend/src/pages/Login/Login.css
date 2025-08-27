@@ -1,0 +1,642 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Left side */
+.left-panel {
+  flex: 1;
+  background: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  position: relative;
+}
+
+.welcome-content {
+  max-width: 800px;
+  margin-left: 5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.welcome-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+.left-panel h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 3;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 3;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin: 0.3rem 0 2rem 0;
+  color: #fff;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 3;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo-btn {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.demo-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.demo-btn:hover::before {
+  left: 100%;
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+/* Right side */
+.right-panel {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 2rem;
+}
+
+/* Glassmorphic card style */
+.neumorphic-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 380px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.neumorphic-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+/* Card Title */
+.neumorphic-card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-header {
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.card-header h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-header p {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styling */
+.login-form {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.login-input-group {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.login-input-group input {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  outline: none;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-input-group input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+.login-input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0;
+  z-index: 3;
+}
+
+.password-toggle:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.password-toggle img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: invert(100%) brightness(90%);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.password-toggle img:hover {
+  transform: scale(1.1);
+  filter: invert(100%) brightness(100%);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 3;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.remember-me input {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forgot-password {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  align-items: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.forgot-password:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Glassmorphic Sign In Button */
+.green-signin-btn {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.green-signin-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.green-signin-btn:hover::before {
+  left: 100%;
+}
+
+.green-signin-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+.green-signin-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.green-signin-btn.loading {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Divider with OR */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin: 1.5rem 0;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.divider hr {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  border: none;
+}
+
+.divider span {
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Glassmorphic Google Sign In Button */
+.google-btn {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.google-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.google-btn:hover::before {
+  left: 100%;
+}
+
+.google-btn:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.signup-link {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 3;
+}
+
+.signup-link p {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+button.toggle-auth-btn,
+.toggle-auth-btn {
+  all: unset;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+button.toggle-auth-btn:hover,
+.toggle-auth-btn:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .welcome-content {
+    max-width: 100%;
+    margin-left: 0rem;
+    margin: 0 1rem;
+  }
+
+  .logo-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .left-panel {
+    flex: none;
+    text-align: center;
+  }
+
+  .left-panel h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .right-panel {
+    padding: 1rem;
+  }
+
+  .neumorphic-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-input-group input {
+    padding: 0.9rem 0.9rem 0.9rem 2.8rem;
+    font-size: 0.95rem;
+  }
+
+  .green-signin-btn {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .google-btn {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-panel {
+    padding: 1.5rem 1rem;
+  }
+
+  .left-panel h1 {
+    font-size: 2rem;
+  }
+
+  .neumorphic-card {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .form-options {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+/* Loading states */
+.login-form.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Success animation */
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.green-signin-btn.success {
+  animation: successPulse 0.6s ease-in-out;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+/* Error states */
+.login-input-group.error input {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.error-message {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus trap for accessibility */
+.neumorphic-card:focus-within {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+
